@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--
+Author: Kyle Jolicoeur
+Email: kyle_jolicoeur@student.uml.edu
+Author is a University of Massachusetts - Lowell student
+enrolled in [COMP.4610] GUI Programming 1 course.
+File Created: 7/11/2020
+Details: This website is used as a graded programming assignment
+for this course. It is also my professional profile as a computer
+software engineer. This webpage is for displaying my contact information.
+Currently, the submit buttons do not use PHP, but will be implemented in the
+future.
+</thead>
+-->
+<html lang="en">
+    <head>
+        <!-- HTML Head section-->
+        <meta charset="utf-8">
+        <title>Contact - Kyle Jolicoeur</title>
+        <!--<link rel="stylesheet" href="css/site.css">-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    </head>
+    <body class="m-auto mt-4" style="border: 5px solid #000000; background-image: url(images/Triangles.png); background-attachment: fixed;background-size:cover; min-width: 650px; width:80%;">
+        <div class="card-body bg-light p-5"style="border-bottom: 5px solid #000000;">
+            <h1 class="card-title">Kyle Jolicoeur</h1>
+            <img class="img-responsive " src="images/kyle_face.jpg" alt="Kyle's portrait photo" style="margin-top: -100px;height:220px;width:220px;float:right;">
+            <ul class=" list-group-flush" style="padding-bottom: 0;list-style-type:none;">
+
+                <li><a class="col-md-2 active " href="index.html">About Me</a></li>
+                <li><a class="col-md-2 " href="guihw.html">[COMP.4610] GUI Programming I</a></li>
+                <!--<li><a href="projects.html">Experience</a></li>-->
+                <li><a class="col-md-2 " href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="container p-md-4" style="
+        color: #05386B;
+        background-image: radial-gradient(white, #5CDB95, #05386B);
+        background-attachment:local;
+        background-position: top;
+        background-size:100% 100%;
+        text-shadow: 1px 1px #05386B;
+        letter-spacing: .05em;
+        margin: auto;">
+            <!-- Page Content Section -->
+            <h2 style="padding:0 15px 15px 15px;">Contact Kyle:</h2>
+            <form action="projects.html">
+                <div class="form-group float-right bg-success p-md-4 p-2 border border-dark">
+                    <p>Rate my website from 1-10</p>
+                    <input type="range" min="1" max="10" value="10" id="rating">
+                    <input type="submit" name="submit">
+                </div>
+            </form>
+            <ul>
+                <li>Email: <a id="emaildisplay" href="mailto:Kyle_Jolicoeur@student.uml.edu">
+                    Kyle_Jolicoeur@student.uml.edu</a></li>
+                <li>GitHub: <a href="https://github.com/kjolicoeur">
+                    kjolicoeur<br></a></li>
+                <li>Submit a form to me with any questions, job offers, or
+                comments:</li>
+            </ul><br>
+                <form action="projects.html" name="website"
+                method="post" class="form-group bg-light p-md-4 mw-60">
+                <fieldset>
+                    <legend>Submit a form</legend>
+                    <div class="form-group">
+                        <label for="name">First name:</label><br>
+                        <input class="form-control" type="text" id="name" name="name" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="emailcontact">Email address:</label><br>
+                        <input class="form-control" type="email" id="emailcontact" name="email" value=""
+                        pattern=".+@+.+" required>
+                    </div>
+                    <div class="form-group">
+                        <label style="text-align:center;"for="textfield">Subject matter:</label>
+                        <textarea class="form-control" name="textfield" id="textfield" rows="5" cols="30"></textarea>
+                    </div>
+                    <div class="form-group">
+                    <input type="submit" value="Submit">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <footer class="bg-light text-dark p-3 text-center" style="border-bottom: 5px solid #000000;">
+            <!--All code was written by Kyle Jolicoeur or cited using
+            https://www.w3schools.com/ as a tag resource dictionary -->
+            <i><b>Copyright &#169; Kyle Jolicoeur 2020</b></i>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </body>
+</html>
