@@ -1,0 +1,181 @@
+/*
+* Author: Kyle Jolicoeur
+* Email: kyle_jolicoeur@student.uml.edu
+* Author is a University of Massachusetts - Lowell student
+* enrolled in [COMP.4610] GUI Programming 1 course.
+* File Created: 7/11/2020
+* Details: This website is used as a graded programming assignment
+* for this course. It is also my professional profile as a computer
+* software engineer. This is the external style sheet for this website.
+*/
+/*---------------HTML TAGS---------------*/
+html {
+    /* Image taken with a free commercial use license from https://pixabay.com/*/
+    background-image: url("../images/Triangles.png");
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    font-family: Helvetica, Sans-Serif, Arial, Verdana;
+}
+footer {
+    text-align: center;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    padding-bottom: 20px;
+}
+a:visited {
+    color: #05386B;
+}
+a:link {
+    color: #05386B;
+}
+a:hover {
+    color: red;
+}
+p {
+    font-size: 18px;
+}
+h1 {
+    font-family: sans-serif;
+    margin-top: auto;
+    font-size: 36px;
+    padding: 20px;
+}
+/* List style*/
+ul {
+    font-size: 18px;
+    list-style-type: square;
+}
+li {
+    padding-bottom: 5px;
+}
+/* Main body */
+body{
+    font-family: Helvetica, Sans-Serif, Arial, Verdana;
+    width: 70%;
+    margin: auto;
+    min-width: 700px;
+    background-color: #5CDB95;
+    color: #05386B;
+    border: 5px solid #000000;
+    background-image: radial-gradient(white, #5CDB95, #05386B);
+    background-attachment: fixed;
+    background-position: top;
+    text-shadow: 1px 1px #05386B;
+    letter-spacing: .05em;
+}
+form {
+    background-color: #FFFFFF;
+    margin-left: auto;
+    margin-right: auto;
+}
+img {
+    width: 25%;
+    height: 25%;
+    min-width: 300px;
+    min-height: 300px;
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border-style:ridge;
+    border-width: thick;
+    border-color: #9ACD32;
+}
+textarea {
+    vertical-align: middle;
+    display: inline-block;
+}
+/* Table style*/
+table {
+    background-color: #EDF5E1;
+}
+table td{
+    border-right-width: thick;
+    border-right-style: ridge;
+}
+table td:first-child {
+    border-left-width: thick;
+    border-left-style: ridge;
+}
+table:last-child {
+    border-bottom-width: thin;
+    border-bottom-style: ridge;
+}
+/*---------------.class selectors---------------*/
+/* The white space including, my name and the topnav*/
+.topbar {
+    height: 100%;
+    min-height: 150px;
+    background-color: #EDF5E1;
+    border-bottom: 5px solid #000000;
+    min-width: 700px;
+}
+.topnav a {
+    text-decoration: none;
+}
+.topnav {
+    font-family: sans-serif;
+    text-align: justify;
+    width: 100%;
+    vertical-align: middle;
+    min-width: 600px;
+}
+.topnav ul {
+    list-style-type: none;
+}
+.topnav ul li {
+    float: left;
+    margin-right: 30px;
+}
+/*large containers for content*/
+.leftsection {
+    width: 100%;
+    margin-bottom: 40px;
+    padding-bottom: 5px;
+}
+.content {
+    padding: 20px;
+    width: 90%;
+    margin: auto;
+
+}
+/*table*/
+.tableheader {
+    padding: 10px;
+    border-width: thick;
+    border-style: ridge;
+    text-align: center;
+    font-size: 24px;
+}
+.tablecontent {
+    padding: 5px;
+    text-align: center;
+}
+/*---------------ID selectors---------------*/
+#ratesection {
+    background-color: #9ACD32;
+    border-color: #05386B;
+    width: 20%;
+    margin-left: 10%;
+    float: right;
+    min-width: 140px;
+    border: .3em solid;
+    text-align: center;
+    padding: 10px;
+    border-style:ridge;
+    border-width: thick;
+}
+/*Active page in topnav*/
+#active {
+    background-color: #8EE4AF;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 2px dashed #000000;
+}
+#emaildisplay {
+    text-decoration: none;
+}
