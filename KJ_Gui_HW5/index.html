@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>HW5- Multiplication Table v.1</title>
+        <link rel="stylesheet" href="css/multi.css">
+    </head>
+    <body>
+        <form id="form">
+            <h2>Multiplication Table v.1</h2>
+            <label for="horiz">Horizontal Multiplier:</label>
+            <input type="text" id="horizStart" size="5" placeholder="start #">&rarr;
+            <input type="text" id="horizEnd" size="5" placeholder="end #">
+            <p id="errorHoriz"></p>
+            <p id="errorHoriz2"></p>
+            <label for="vert">Vertical Multiplier:</label>
+            <input type="text" id="vertStart" size="5" placeholder="start #">&rarr;
+            <input type="text" id="vertEnd" size="5" placeholder="end #">
+            <p id="errorVert"></p>
+            <p id="errorVert2"></p>
+            <button id="submit" type="button" onclick="updateTable()">Calculate Table</button>
+        </form>
+        <script src="js/index.js"></script>
+    </body>
+</html>
