@@ -37,13 +37,21 @@ table, td {
 }
 #errorHoriz, #errorHoriz2 {
     color: rgb(255, 0, 0);
+    width: 100%;
+}
+#errorHoriz label, #errorHoriz2 label {
+    width: 100%;
+    text-align: center;
+}
+#errorVert label, #errorVert2 label {
+    width: 100%;
+    text-align: center;
 }
 #errorVert, #errorVert2 {
     color: rgb(255, 0, 0);
+    width: 100%;
 }
 table {
-    margin: auto;
-    width: auto;
     overflow: hidden;
     padding-top: 40;
     table-layout: fixed;
