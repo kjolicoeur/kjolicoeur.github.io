@@ -1,0 +1,62 @@
+<!doctype html>
+<!--
+Author: Kyle Jolicoeur
+Email: kyle_jolicoeur@student.uml.edu
+Author is a University of Massachusetts - Lowell student
+enrolled in [COMP.4610] GUI Programming 1 course.
+File Created: 8/4/2020
+Details: This website is used as a graded programming assignment
+for this course. This is a multiplication table generated from a form using JS.
+It is validated using the jQuery Validation Plugin https://jqueryvalidation.org/
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+    <link rel="stylesheet" href="css/multi.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+</head>
+<body>
+    <form id="form">
+        <h2>Multiplication Table v.1</h2>
+        <span id="row_one">
+            <label for="horizStart">Horizontal Axis Start:</label>
+            <input type="text" id="horizStart" name="horizStart" size="5" placeholder="start #">
+            <div id="horizStartSlider" class="slider"></div>
+            <span id="errorHoriz"></span>
+        </span>
+        <br>
+        <span id="row_two">
+            <label for="horizEnd" class="displayLabel">Horizontal Axis End:</label>
+            <input type="text" id="horizEnd" name="horizEnd" size="5" placeholder="end #">
+            <div id="horizEndSlider" class="slider"></div>
+            <span id="errorHoriz2"></span>
+        </span>
+        <br>
+        <span id="row_three">
+            <label for="vertStart" class="displayLabel">Vertical Axis Start:</label>
+            <input type="text" id="vertStart" name="vertStart" size="5" placeholder="start #">
+            <div id="vertStartSlider" class="slider"></div>
+            <span id="errorVert"></span>
+        </span>
+        <br>
+        <span id="row_four">
+            <label for="vertEnd" class="displayLabel">Vertical Axis End:</label>
+            <input type="text" id="vertEnd" name="vertEnd" size="5" placeholder="end #">
+            <div id="vertEndSlider" class="slider"></div>
+            <span id="errorVert2"></span>
+        </span>
+        <button id="submit" type="button">Calculate Table</button>
+    </form>
+
+    <!--<a href="http://jquery.com/">jQuery</a>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>-->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script
+        src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+        integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
