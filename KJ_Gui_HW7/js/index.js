@@ -7,54 +7,15 @@ File Created: 8/4/2020
 Details: This website is used as a graded programming assignment
 for this course. This is a multiplication table generated from a form using JS.
 It is validated using the jQuery Validation Plugin https://jqueryvalidation.org/
+This version adds event listeners, adds tabbed ui, and sliders.
 */
 //set up event listener for submitting the form and calculating table
 let form = document.getElementById("form");
 if(form) {
     form.addEventListener('submit',updateTable);
 }
-//Add slider to html
 
 $(document).ready(function(){
-    $("#horizStartSlider").slider({
-        min: -50,
-        max: 50,
-        step: 1,
-        value: 0,
-        slide: function(event, ui) {
-            $("#horizStart").val(ui.value);
-        }
-    });
-    $("#horizEndSlider").slider({
-        min: -50,
-        max: 50,
-        step: 1,
-        value: 0,
-        slide: function(event, ui) {
-            $("#horizEnd").val(ui.value);
-        }
-    });
-    $("#vertStartSlider").slider({
-        min: -50,
-        max: 50,
-        step: 1,
-        value: 0,
-        slide: function(event, ui) {
-            $("#vertStart").val(ui.value);
-        }
-    });
-    $("#vertEndSlider").slider({
-        min: -50,
-        max: 50,
-        step: 1,
-        value: 0,
-        slide: function(event, ui) {
-            $("#vertEnd").val(ui.value);
-        }
-    });
-    $("#horizStart").on("keydown", function() {
-        //start here kyle
-    });
     //validation rules
     $("#form").validate({
         rules: {
@@ -66,12 +27,14 @@ $(document).ready(function(){
 
                 greater: horizEnd
             },
+
             horizEnd: {
                 required: true,
                 number: true,
                 max:50,
                 min:-50
             },
+
             vertStart: {
                 required: true,
                 number: true,
@@ -79,123 +42,223 @@ $(document).ready(function(){
                 min:-50,
                 greater: vertEnd
             },
+
             vertEnd: {
                 required: true,
                 max:50,
                 min:-50,
                 number: true
             }
+
         },
+
         messages: {
             horizStart: {
                 required: "Please insert a number to the horizontal start#",
                 digits: "Please insert only numbers to the horizontal start#",
                 greater: "Bounds are in wrong order"
             },
+
             horizEnd: {
                 required: "Please insert a number to the horizontal end#",
                 digits: "Please insert only numbers to the horizontal end#",
                 greater: "Bounds are in wrong order"
             },
+
             vertStart: {
                 required: "Please insert a number to the horizontal start#",
                 digits: "Please insert only numbers to the horizontal start#",
                 greater: "Bounds are in wrong order"
             },
+
             vertEnd: {
                 required: "Please insert a number to the horizontal end#",
                 digits: "Please insert only numbers to the horizontal end#",
                 greater: "Bounds are in wrong order"
             }
+
         },
+
         errorPlacement: function(error, element) {
             if (element.attr("name") == "horizStart") {
                 error.appendTo("#errorHoriz");
             }
+
             else if (element.attr("name") == "horizEnd") {
                 error.appendTo("#errorHoriz2");
             }
+
             else if (element.attr("name") == "vertStart") {
                 error.appendTo("#errorVert");
             }
+
             else if (element.attr("name") == "vertEnd") {
                 error.appendTo("#errorVert2");
             }
+
         }
+
+    });
+
+    //Add sliders to html
+    $("#horizStartSlider").slider({
+        min: -50,
+        max: 50,
+        step: 1,
+        value: 0,
+        slide: function(event, ui) {
+            $("#horizStart").val(ui.value);
+            displayTempTable();
+        }
+
+    });
+
+    $("#horizEndSlider").slider({
+        min: -50,
+        max: 50,
+        step: 1,
+        value: 0,
+        slide: function(event, ui) {
+            $("#horizEnd").val(ui.value);
+            displayTempTable();
+        }
+
+    });
+
+    $("#vertStartSlider").slider({
+        min: -50,
+        max: 50,
+        step: 1,
+        value: 0,
+        slide: function(event, ui) {
+            $("#vertStart").val(ui.value);
+            displayTempTable();
+        }
+
+    });
+
+    $("#vertEndSlider").slider({
+        min: -50,
+        max: 50,
+        step: 1,
+        value: 0,
+        slide: function(event, ui) {
+            $("#vertEnd").val(ui.value);
+            displayTempTable();
+        }
+
+    });
+
+    //event listeners for dynamic table
+    $("#horizStart").on("keyup", function() {
+        displayTempTable();
+    });
+
+    $("#horizStart").on("keydown", function() {
+        displayTempTable();
+    });
+
+    $("#horizEnd").on("keyup", function() {
+        displayTempTable();
+    });
+
+    $("#horizEnd").on("keydown", function() {
+        displayTempTable();
+    });
+
+    $("#vertStart").on("keyup", function() {
+        displayTempTable();
+    });
+
+    $("#vertStart").on("keydown", function() {
+        displayTempTable();
+    });
+
+    $("#vertEnd").on("keyup", function() {
+        displayTempTable();
+    });
+
+    $("#vertEnd").on("keydown", function() {
+        displayTempTable();
     });
 });
-
+//event listeners for text fields
 $("#horizStart").keyup(function () {
-    //console.log($("#horizStart").val());
     $("#horizStartSlider").slider("option", "value", $("#horizStart").val());
 });
+
 $("#horizEnd").keyup(function () {
-    //console.log($("#horizEnd").val());
     $("#horizEndSlider").slider("option", "value", $("#horizEnd").val());
 });
+
 $("#vertStart").keyup(function () {
-    //console.log($("#vertStart").val());
     $("#vertStartSlider").slider("option", "value", $("#vertStart").val());
 });
+
 $("#vertEnd").keyup(function () {
-    //console.log($("#vertEnd").val());
     $("#vertEndSlider").slider("option", "value", $("#vertEnd").val());
 });
+
 //Adds method greater to be used for validation rules
 $.validator.addMethod("greater", function(value, element, params) {
-    //console.log("val: " + value);
-    //console.log("param:" + params.value);
     var boolFirst = value.indexOf("-"); //start#
     var boolSecond = params.value.indexOf("-"); //end#
-    //console.log("value: " + boolFirst + " params: " +boolSecond);
     if (element.optional) {
         return false;
     }
+
     else if (params.value == "") {
         return true;
     }
+
     else if (boolFirst == 0 && boolSecond == 0){
         //Both contain negatives
-        return value > params.value;
-
+        return Math.abs(value) > Math.abs(params.value);
     }
+
     else if ( boolFirst == 0 && boolSecond < 0) {
         //First is negative, second is positive
         return true;
     }
+
     else if (boolFirst == -1 && boolSecond == 0) {
         //First is positive, second is negative
         return false;
     }
+
     else if (boolFirst == -1 && boolSecond == -1) {
         //Both are positive
-        return params.value > value;
+        return Math.abs(params.value) > Math.abs(value);
     }
-    /*else if (value >= params.value) {
-            return false;
-    }*/
+
     else {
         return true;
     }
+
 });
-//event listener to validate form
+
+//event listener to validate form on submit
 $("button").click(function() {
     if($("#form").valid()) {
         updateTable();
+        let newTab = document.createElement("P");
+        newTab.appendChild(document.createTextNode("Saved table to tabbed UI"));
+        newTab.setAttribute("padding","10px");
+        newTab.id = "dynamicTable";
+        $("#dynamicTable").replaceWith(newTab);
     }
 });
+//creates and updates the dynamic table
 function displayTempTable() {
-    var table = "";
-    if (!document.getElementById("#dynamicTable")) {
-        table = document.createElement("TABLE");
-        table.setAttribute("id","dynamicTable");
+    if ($("#form").valid()){
+        let table = document.createElement("TABLE");
+        table.setAttribute("id", "dynamicTable");
+        generateTable(table);
+        $("#dynamicTable").replaceWith(table);
+        table.style.float = "right";
     }
-    else {
-        table = document.getElementById("#dynamicTable");
-    }
-    generateTable(table);
-    $("#dynamicTable").innerHTML(table);
 }
+
 //This function creates the tabbed UI, and calls generateTable()
 function updateTable() {
     // Insert tabbed interface for the #table object
@@ -233,8 +296,6 @@ function updateTable() {
         unorderedList.style.width = "100%";
         unorderedList.setAttribute("id", "tabUL");
         fullList.appendChild(unorderedList);
-        //$("#myTabs").style.overflow-x = "scroll";
-        //$("#myTabs").style.overflow-y = "scroll";
 
     }
 
@@ -242,6 +303,7 @@ function updateTable() {
         unorderedList = document.getElementById("tabUL");
     }
 
+    //create the tab for tabbed UI
     let newTab = document.createElement("LI");
     let newLink = document.createElement("A");
     newLink.setAttribute("href", "#"+unorderedList.childElementCount);
@@ -258,6 +320,7 @@ function updateTable() {
           $("#myTabs").tabs("refresh");
     };
 
+    //add close button to each tab
     closeButton.appendChild(closeAction);
     closeButton.setAttribute("class","closeButton");
     newTab.appendChild(closeButton);
@@ -269,6 +332,7 @@ function updateTable() {
     table.setAttribute("class", "panel")
     generateTable(table);
 
+    //create the div for the tabbed content
     let newTabContent = document.createElement("DIV");
     newTabContent.setAttribute("id", unorderedList.childElementCount-1);
     newTabContent.setAttribute("class", "panel");
@@ -279,6 +343,7 @@ function updateTable() {
     $("#myTabs").tabs("refresh");
 }
 
+//builds the HTML elements for the table and stores in table variable
 function generateTable(table) {
 
     //grab text from HTML inputs
@@ -349,7 +414,6 @@ function generateTable(table) {
 
     }
 
-    //console.log("horiz: " + horizRange.length);
         //for loop to build table
         for (let i = 0; i <= vertRange.length; i++) {
             var rows = document.createElement("TR");
@@ -388,19 +452,7 @@ function generateTable(table) {
         table.style.margin = "20px";
 }
 
-$(".closeButton").on("click", "span.closeButton", function () {
-});
-
 //multiplies two variables
 function multiply(n1, n2) {
     return n1*n2;
-}
-
-// removes table if need be (might be outdated)
-function clearTable() {
-    document.getElementById('table').innerHTML = "";
-     //document.getElementById('table').removeChild(document.querySelector('table'));
-    //for (var i=vertEnd; i <document.getElementById("table").rows.length; i--) {
-    //    document.getElementById('table').deleteRow(i);
-    //}
 }
