@@ -1,0 +1,81 @@
+#data {
+    min-width: 450px;
+    font-weight:900;
+    z-index: 100;
+}
+
+.letter img{
+    max-width: 50px;
+}
+
+#leftPanel {
+    position: absolute;
+    left: 100px;
+    max-width: 400px;
+    z-index 101;
+}
+
+#rightPanel {
+}
+
+#gameContainer {
+    position: relative;
+    left: 0;
+    top: 30px;
+    text-align: center;
+}
+#letterPosition {
+    position: relative;
+    z-index: 5;
+}
+#playerRack {
+z-index: -2;
+}
+#errorBox {
+    min-width: 200px;
+    max-width: 320px;
+    min-height: 150px;
+    color: rgba(255,0,0,0.5);
+    padding: 15px;
+    margin-right: 0;
+    background-color: rgba(240,240,240,0.8);
+    border: 1px dotted rgba(0,0,0,0.2);
+}
+
+#gameBoard {
+    padding:20px;
+    position: absolute;
+    left:400px;
+    top: 0px;
+    margin-top: -50px;
+    z-index: -1;
+}
+img {
+    z-index: 100;
+}
+button {
+    z-index: 50;
+}
+#playerBar {
+    position:fixed;
+    top: 500px;
+    left: 75px;
+}
+
+body {
+    background-color: rgba(200,200,200,0.5);
+    overflow-x: auto;
+    font-family: "Comic Sans MD", cursive, sans-serif;
+
+}
+
+h1 {
+    left:0px;
+    max-width:1600px;
+    margin: auto;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    background-color: rgba(150,50,105,.8);
+    border: 5px solid rgba(0,0,0,0.5);
+}

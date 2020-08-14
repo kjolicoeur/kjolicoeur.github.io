@@ -1,3 +1,9 @@
+/*
+Author: Kyle Jolicoeur
+Student at the University of Massachusetts -- Lowell campus.
+This file was created for a homework assignment for the Gui Programming I
+course in summer of 2020 as an exercise in jQuery.
+*/
 $(function() {
 
     let bgColor = $("#one").css("background-color");

@@ -1,0 +1,53 @@
+<!doctype html>
+<!--
+Author: Kyle Jolicoeur
+Email: kyle_jolicoeur@student.uml.edu
+Author is a University of Massachusetts - Lowell student
+enrolled in [COMP.4610] GUI Programming 1 course.
+File Created: 8/11/2020
+Details: This website is used as a graded programming assignment
+for this course. This is a Scrabble game.
+-->
+<html>
+    <head>
+        <title>-- Scrabble --</title>
+        <link rel="stylesheet" href="css/site.css">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    </head>
+    <body>
+        <h1>Kyle's ScrabbleBoard(v.1)</h1>
+        <table id="gameContainer">
+            <tr id="leftPanel">
+                <td id="data">
+                    <p>Player Score: <span id="playerScore"></span></p>
+                    <p id="errorBox">test</p>
+                    <span id="buttonBar">
+                        <button type="button" onclick="">Submit Word</button>
+                        <button type="button" onclick="newGame()">New Game</button>
+                    </span>
+                </td>
+                <td id="rightPanel">
+                    <img id="gameBoard" src="images/ScrabbleBoard.jpg" width="900px">
+                    <span id="dropTarget"></span>
+                </td>
+            </tr>
+            <tr>
+                <td id=playerBar>
+                    <img id="playerRack" src="images/scrabble-tile-holder.png" width="375px">
+                    <span id="letterPosition"></span>
+                </td>
+                <td style="z-index: -100; width: 0px">
+                </td>
+            </tr>
+        </table>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script
+        src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+        integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
+    <script src="js/index.js"></script>
+    <script id="piecesScript" type="application/json" src="json/pieces.json"></script>
+    </body>
+</html>
