@@ -1,0 +1,22 @@
+Kyle Jolicoeur
+
+Currently working:
+
+-Dragging and dropping to squares on the board.
+-Tiles exist as an array read from a JSON file
+-Able to draw 7 unique tiles, with the number-remaining decrementing
+-Structure for dragging and dropping. 2-d array structure of ID names of elements
+-Bounce back when invalid location
+-over 530 lines of code
+
+Bugs:
+-Tiles don't snap back to the bar, but the last object it was dropped onto (the board)
+-Cannot submit words :(
+-Couldn't get the divs on the board to "absorb" the object
+-Elements get misplaced during resizing
+-no functionality for blank tiles
+
+I submitted late in order to try to get extra credit done. But after many hours,
+I do not have enough time to fully create my game.
+
+I was aiming to create a full playable game, with a nice UI.
