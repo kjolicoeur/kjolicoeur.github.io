@@ -4,7 +4,7 @@ Currently working:
 
 -Dragging and dropping to squares on the board.
 -Tiles exist as an array read from a JSON file
--Able to draw 7 unique tiles, with the number-remaining decrementing
+-Able to draw 7 unique randomly chosen tiles, with the number-remaining decrementing in the json object
 -Structure for dragging and dropping. 2-d array structure of ID names of elements
 -Bounce back when invalid location
 -over 530 lines of code
@@ -15,6 +15,7 @@ Bugs:
 -Couldn't get the divs on the board to "absorb" the object
 -Elements get misplaced during resizing
 -no functionality for blank tiles
+-tiles don't reset on new game
 
 I submitted late in order to try to get extra credit done. But after many hours,
 I do not have enough time to fully create my game.
